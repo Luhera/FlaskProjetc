@@ -12,7 +12,6 @@ db.init_app(app)
 app.register_blueprint(employee_blueprint, url_prefix='/') #ta avisando que tem um gerenciador de rotas
 
 if __name__ =="__main__":
- app.run(debug=True)
  with app.app_context(): #criação do banco ja quando o aplicativo é inicializado. 
       db.create_all()
- app.run(port= 5000)
+ app.run(debug=True)

@@ -2,7 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
  
-class EmployeeModel(db.Model):
+class EmployeeModel(db.Model):  #ta estabelencendo onde vai ser o model do nosso projeto.
    
     __tablename__ = 'employee'
    
@@ -15,3 +15,6 @@ class EmployeeModel(db.Model):
         self.cpf = cpf
         self.name = name
         self.position = position
+
+    def __repr__(self) : #ele exibe o obejeto que colocamos.
+        return f"{self.id}:{self.name} -- {self.position}"
